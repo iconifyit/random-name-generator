@@ -1,37 +1,35 @@
-import colors from "../helpers/colors.json";
-import adjectives from "../helpers/adjectives.json";
-import animals from "../helpers/animals.json";
-import { pluralize, camelize } from 'inflected';
+const colors = require("./words/colors.json");
+const adjectives = require("./words/adjectives.json");
+const animals = require("./words/animals.json");
 
-
-class NameGenerator {
-
-    #adjectives = [];
-    #animals = [];
-    #colors = [];
-
-    constructor() {
-        this.#colors = colors.entries;
-        this.#adjectives = adjectives.entries;
-        this.#animals = animals.entries;
-    }
-    
-    get(count=1) {
-        const results = [];
+const NameGenerator = {
+    colors: colors,
+    adjectives: adjectives,
+    animals: animals,
+    getDescriptor: function() {
+        const _colors     = NameGenerator.colors.entries;
+        const _adjectives = NameGenerator.adjectives.entries;
+        const color       = _colors[Math.floor(Math.random() * _colors.length)];
+        const adjective   = _adjectives[Math.floor(Math.random() * _adjectives.length)];
+        const descriptor  = [color, adjective][Math.floor(Math.random() * 2)];
+        return descriptor;
+    },
+    getAnimal: function() {
+        const _animals = NameGenerator.animals.entries;
+        const animal   = _animals[Math.floor(Math.random() * _animals.length)];
+        return animal;
+    },
+    get: function(count) {
+        if (!count) count = 1;
+        let results = [];
         for (let i = 0; i < count; i++) {
-            let color = this.#colors[Math.floor(Math.random() * this.#colors.length)];
-            let adjective = this.#adjectives[Math.floor(Math.random() * this.#adjectives.length)];
-            let descriptor = [color, adjective][Math.floor(Math.random() * 2)];
-            let animal = this.#animals[Math.floor(Math.random() * this.#animals.length)];
-            results.push(
-                camelize(pluralize(
-                    `${descriptor} ${animal}`
-                ))
-            );
+            let descriptor = NameGenerator.getDescriptor();
+            let animal     = NameGenerator.getAnimal();
+            results.push(`${descriptor} ${animal}`.toLowerCase());
         }
         if (count === 1) return results[0];
         return results;
     }
 }
 
-export default NameGenerator;
+module.exports = NameGenerator;
