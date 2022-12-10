@@ -1,0 +1,26 @@
+{
+  "name": "@atomiclotus/random-name-generator",
+  "version": "1.0.1",
+  "description": "Generate random name(s) from colors, adjectives, and animals",
+  "main": "index.js",
+  "scripts": {
+    "test": "N/A"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/iconifyit/random-name-generator.git"
+  },
+  "keywords": [
+    "naming",
+    "names",
+    "random",
+    "placeholder",
+    "animal"
+  ],
+  "author": "scott <scott@atomiclotus.net>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/iconifyit/random-name-generator/issues"
+  },
+  "homepage": "https://github.com/iconifyit/random-name-generator#readme"
+}
