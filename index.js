@@ -6,6 +6,16 @@ const NameGenerator = {
     colors: colors,
     adjectives: adjectives,
     animals: animals,
+    getColor: function() {
+        const _colors = NameGenerator.colors.entries;
+        const color   = _colors[Math.floor(Math.random() * _colors.length)];
+        return color;
+    },
+    getAdjective: function() {
+        const _adjectives = NameGenerator.adjectives.entries;
+        const adjective   = _adjectives[Math.floor(Math.random() * _adjectives.length)];
+        return adjective;
+    },
     getDescriptor: function() {
         const _colors     = NameGenerator.colors.entries;
         const _adjectives = NameGenerator.adjectives.entries;
