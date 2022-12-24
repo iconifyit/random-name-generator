@@ -11,7 +11,7 @@ npm install @atomiclotus/random-name-generator
 By default, the generator will return a single name. You can also pass in a number to get multiple names.
 
 ```javascript
-const NameGenerator = require('@atomiclotus/random-name-generator');
+const NameGenerator = require('@atomiclotus/random-name-generator').default;
 
 const oneName = NameGenerator.get();
 // => 'courageous bluebird'
