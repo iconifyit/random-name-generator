@@ -14,10 +14,10 @@ if (args.length > 0 && args[0] === 'help') {
         "    @param {string} input   The number of names to generate \n" +
         "\n"
     );
-    return;
+    exit(0);
 }
 
-const NameGenerator = require('./index');
+const NameGenerator = require('../dist/index.js').default;
 let count = parseInt(args[0]) || 1;
 
 console.log(

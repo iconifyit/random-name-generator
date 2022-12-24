@@ -1,0 +1,2 @@
+#!/usr/bin/env node
+const[,,...args]=process.argv;args.length>0&&"help"===args[0]&&(console.log("\nUsage : \n    @param {string} input   The number of names to generate \n\n"),exit(0));const NameGenerator=require("../dist/index.js").default;let count=parseInt(args[0])||1;console.log(NameGenerator.get(count));

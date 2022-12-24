@@ -42,4 +42,4 @@ const NameGenerator = {
     }
 }
 
-module.exports = NameGenerator;
+export default NameGenerator;
