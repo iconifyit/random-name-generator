@@ -1,6 +1,6 @@
 {
   "name": "@atomiclotus/random-name-generator",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "description": "Generate random name(s) from colors, adjectives, and animals",
   "main": "dist/index.js",
   "scripts": {
